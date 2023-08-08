@@ -1,5 +1,6 @@
 {
   "name": "my-form-formik-2",
+  "homepage": "http://Priyank9470.github.io/React-Form-Formik-And-Yup",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -18,6 +19,8 @@
     "yup": "^1.2.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
