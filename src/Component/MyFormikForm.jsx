@@ -133,7 +133,7 @@ function MyFormikForm() {
                         >
                             <option value="" disabled>Select Your City</option>
                             {dropOption.map((option) => (
-                                <option key={option.value}>{option.la}</option>
+                                <option key={option.value}>{option.label}</option>
                             ))}
                         </select>
                         {errors.selectCity && touched.selectCity ? <p>{errors.selectCity}</p> : null}
