@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/React-Form-Formik-And-Yup/static/css/main.bae30652.css",
-    "main.js": "/React-Form-Formik-And-Yup/static/js/main.44e54881.js",
+    "main.js": "/React-Form-Formik-And-Yup/static/js/main.326a1834.js",
     "static/js/787.f84da453.chunk.js": "/React-Form-Formik-And-Yup/static/js/787.f84da453.chunk.js",
     "index.html": "/React-Form-Formik-And-Yup/index.html",
     "main.bae30652.css.map": "/React-Form-Formik-And-Yup/static/css/main.bae30652.css.map",
-    "main.44e54881.js.map": "/React-Form-Formik-And-Yup/static/js/main.44e54881.js.map",
+    "main.326a1834.js.map": "/React-Form-Formik-And-Yup/static/js/main.326a1834.js.map",
     "787.f84da453.chunk.js.map": "/React-Form-Formik-And-Yup/static/js/787.f84da453.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bae30652.css",
-    "static/js/main.44e54881.js"
+    "static/js/main.326a1834.js"
   ]
 }
