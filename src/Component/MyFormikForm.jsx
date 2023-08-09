@@ -15,11 +15,11 @@ const initialValues = {
 }
 
 function MyFormikForm() {
-    const { values, errors, handleChange, handleSubmit, touched, setValues, setErrors } = useFormik({
+    const { values, errors, handleChange, handleSubmit, touched, setValues, resetForm } = useFormik({
         initialValues: initialValues,
         validationSchema: validate,
-        onSubmit: (values, action) => {
-            action.resetForm()
+        onSubmit: () => {
+            alert(`Thank You ${values.name} for submitting form`)
         }
     })
     const dropOption = [
@@ -28,8 +28,8 @@ function MyFormikForm() {
         { label: "Vapi", value: 3 },
     ];
     const checkBoxList = [
-        { labelCheck: "Cricket", valueCheck: 1 },
-        { labelCheck: "Football", valueCheck: 2 },
+        { labelHobby: "Cricket", valueHobby: 1 },
+        { labelHobby: "Football", valueHobby: 2 },
     ];
     const [uploadeImage, setUploadeImage] = useState("")
     const handleImageChange = (event) => {
@@ -46,7 +46,7 @@ function MyFormikForm() {
     };
     const handleReset = () => {
         setValues(initialValues);
-        setErrors({});
+        resetForm()
         setUploadeImage("");
     };
     return (
@@ -131,7 +131,7 @@ function MyFormikForm() {
                             onChange={handleChange}
                             value={values.selectCity}
                         >
-                            <option value="" disabled>Select Your City</option>
+                            <option value="">Select Your City</option>
                             {dropOption.map((option) => (
                                 <option key={option.value}>{option.label}</option>
                             ))}
@@ -152,6 +152,7 @@ function MyFormikForm() {
                                 id="radio"
                                 // required
                                 value="Male"
+                                checked={values.gender === "Male"}
                                 onChange={handleChange}
                             />
                             <label className="form-check-label" htmlFor="gridRadios1">
@@ -165,6 +166,7 @@ function MyFormikForm() {
                                 name="gender"
                                 id="radio"
                                 value="Female"
+                                checked={values.gender === "Female"}
                                 // required
                                 onChange={handleChange}
                             />
@@ -182,17 +184,18 @@ function MyFormikForm() {
                     <div className="col-sm-1">
                         <div className="checkBoxList">
                             {checkBoxList.map((select) => (
-                                <label className="form-check" key={select.valueCheck}>
+                                <label className="form-check" key={select.valueHobby}>
                                     <input
                                         className="form-check-input"
                                         type="checkbox"
                                         name="hobby"
-                                        id="checkbox"
+                                        id={`checkbox-${select.valueHobby}`}
                                         // required
+                                        checked={values.valueHobby}
                                         onChange={handleChange}
-                                        value={values.checkbox}
+                                        value={values.valueHobby}
                                     />
-                                    {select.labelCheck}
+                                    {select.labelHobby}
                                 </label>
                             ))}
                         </div>
